@@ -21,8 +21,8 @@ pipeline {
                 sh "git rev-parse --abbrev-ref HEAD"
                 sh "git rev-parse --symbolic-full-name HEAD"
                 sh "git name-rev --name-only HEAD"
-                sh "git name-rev --name-only $(git rev-parse HEAD)"
-                sh "git name-rev --refs='refs/heads/*' --name-only $(git rev-parse HEAD)"
+                sh "git name-rev --name-only \$(git rev-parse HEAD)"
+                sh "git name-rev --refs='refs/heads/*' --name-only \$(git rev-parse HEAD)"
                 sh "branch2='alala'"
                 sh "ls -la"
                 sh 'ls -la'
