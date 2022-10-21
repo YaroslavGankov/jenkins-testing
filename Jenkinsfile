@@ -41,9 +41,10 @@ pipeline {
         }
         stage("Deploy") {
             steps {
+                sh "echo Deploy-ept"
                 build job: 'skiffpipe',
                             parameters: [
-                                string(name: 'parameter1', value: ${tagValue})
+                                string(name: 'parameter1', value: tagValue)
                             ]
             }
         }
