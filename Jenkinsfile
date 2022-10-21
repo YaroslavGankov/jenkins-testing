@@ -63,6 +63,7 @@ def getTag() { //useless function when using maven
         DATE_PART =  sh(script: "git show -s --format=%ci | cut -d ' ' -f1 | tr -d -", returnStdout: true).trim()
         ////DATE_PART = new SimpleDateFormat("YYYYMMdd-'r'HHmm").format(new Date())
         GIT_BRANCH = sh(script: "git rev-parse --abbrev-ref HEAD | cut -d / -f 2- | tr '\\/' '_'", returnStdout: true).trim()
+        GIT_BRANCH = env.BRANCH_NAME
         tagValue = "${DATE_PART}-${GIT_BRANCH}_${GIT_COMMIT_HASH_SHORT}"
     }
     return tagValue
