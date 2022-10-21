@@ -15,9 +15,10 @@ pipeline {
                 script {
                     branch2=getTag()
                     echo "-----"
-                    BRANCH3=env.BRANCH_NAME.replaceAll('_','-')
+                    BRANCH3=env.BRANCH_NAME.replaceAll('+','_')
                     echo "-----"
                     BRANCH4="${BRANCH_NAME}"
+                    echo "-----"
                     echo BRANCH4
                 }
                 sh "echo ---------------"
