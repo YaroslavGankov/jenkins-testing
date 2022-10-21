@@ -14,9 +14,11 @@ pipeline {
             steps {
                 script {
                     branch2=getTag();
+                    BRANCH3=env.BRANCH_NAME
                 }
                 sh "echo ${env. BRANCH_NAME}"
                 sh "echo ${env.BRANCH_NAME}"
+                sh "echo BRANCH3: \${env.BRANCH3}"
                 sh "git branch"
                 sh "git rev-parse --show-toplevel"
                 sh "git rev-parse --abbrev-ref HEAD"
