@@ -13,7 +13,9 @@ pipeline {
         stage("set var") {
             steps {
                 script {
-                    branch2=getTag()
+                    script {
+                        branch2=getTag()
+                    }
                     echo "-----"
                     BRANCH3=env.BRANCH_NAME.replaceAll('/','_')
                     echo "-----"
