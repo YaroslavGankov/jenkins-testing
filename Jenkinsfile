@@ -14,6 +14,7 @@ pipeline {
             steps {
                 script {
                     branch2=getTag();
+                    echo ${tagValue}
                 }
                 sh "branch2='alala'"
                 sh "ls -la"
