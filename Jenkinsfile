@@ -14,6 +14,7 @@ pipeline {
             steps {
                 script {
                     branch2=getTag();
+                    echo ${tagValue}
                 }
                 sh "branch2='alala'"
                 sh "ls -la"
@@ -35,18 +36,14 @@ pipeline {
                 // """
             }
         }
-        // stage("read var") {
-        //     steps {
-        //         sh "echo ${branch2}"
-        //         sh "echo $branch2"
-        //         sh script: """
-        //             echo ${LABEL1}
-        //             echo ${LABEL2}
-        //             echo ${branch2}
-        //             echo $branch2
-        //         """
-        //     }
-        // }
+        stage("Deploy") {
+            steps {
+                build job: 'skiffpipe',
+                            parameters: [
+                                string(name: 'parameter1', value: ${tagValue})
+                            ]
+            }
+        }
     }
 }
 
