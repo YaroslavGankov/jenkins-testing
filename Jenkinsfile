@@ -18,6 +18,7 @@ pipeline {
                 sh "git branch"
                 sh "git rev-parse --show-toplevel"
                 sh "git rev-parse --abbrev-ref HEAD"
+                sh "git rev-parse --symbolic-full-name HEAD"
                 sh "branch2='alala'"
                 sh "ls -la"
                 sh 'ls -la'
