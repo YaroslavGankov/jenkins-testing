@@ -15,6 +15,7 @@ pipeline {
                 script {
                     branch2=getTag();
                 }
+                sh "echo ${env. BRANCH_NAME}"
                 sh "git branch"
                 sh "git rev-parse --show-toplevel"
                 sh "git rev-parse --abbrev-ref HEAD"
