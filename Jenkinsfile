@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     branch2=getTag();
-                    BRANCH3=env.BRANCH_NAME.replaceAll("_|\\|\/|\+","-")
+                    BRANCH3=env.BRANCH_NAME.replaceAll("_|\\|\+","-")
                 }
                 sh "echo ${env. BRANCH_NAME}"
                 sh "echo ${env.BRANCH_NAME}"
